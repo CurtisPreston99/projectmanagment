@@ -14,11 +14,11 @@ public class HelloWorld extends HttpServlet {
 
     public static void main(String[] args) throws Exception{
 		    String port=System.getenv("$PORT");
-        System.out.println(port)
+        System.out.println(port);
         if(port==null){
           port="80";
         }
-        Server server = new Server(Integer.parseInt(System.getenv("$PORT")));
+        Server server = new Server(Integer.parseInt(port));
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
         server.setHandler(context);
