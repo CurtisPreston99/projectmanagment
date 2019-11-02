@@ -14,6 +14,7 @@ public class HelloWorld extends HttpServlet {
 
     public static void main(String[] args) throws Exception{
 		    String port=System.getenv("$PORT");
+        System.out.println(port)
         if(port==null){
           port="80";
         }

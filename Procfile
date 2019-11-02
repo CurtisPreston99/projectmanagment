@@ -1,1 +1,2 @@
-web: ./build/install/app/bin/app
+web:    java -cp target/classes:target/dependency/* HelloWorld
+
