@@ -5,3 +5,13 @@ notifications:
 
 jdk:
   - openjdk8
+
+before_script:
+  - chmod +x gradlew
+
+script:
+  - ./gradlew check
+  - ./gradlew test
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

@@ -11,6 +11,8 @@ public class HerokuApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		int x=1;
+		assert x==1;
 	}
 
 }
