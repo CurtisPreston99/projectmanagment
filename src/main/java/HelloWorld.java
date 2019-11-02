@@ -17,7 +17,7 @@ public class HelloWorld extends HttpServlet {
         if(port==null){
           port="80";
         }
-        Server server = new Server(Integer.parseInt(port));
+        Server server = new Server(Integer.parseInt(System.getenv("$PORT")));
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
         server.setHandler(context);
