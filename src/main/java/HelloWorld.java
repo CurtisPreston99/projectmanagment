@@ -13,13 +13,16 @@ public class HelloWorld extends HttpServlet {
     }
 
     public static void main(String[] args) throws Exception{
-		System.out.println(System.getenv("PORT"));
-        Server server = new Server(Integer.parseInt("80"));
+		    String port=System.getenv("$PORT");
+        if(port==null){
+          port="80";
+        }
+        Server server = new Server(Integer.parseInt(port));
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
         server.setHandler(context);
         context.addServlet(new ServletHolder(new HelloWorld()),"/*");
         server.start();
-        server.join();   
+        server.join();
     }
 }
