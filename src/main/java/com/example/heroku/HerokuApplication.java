@@ -25,6 +25,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -51,6 +52,13 @@ public class HerokuApplication {
   @RequestMapping("/")
   String index() {
     return "index";
+  }
+  
+  
+  @RequestMapping("/test")
+  @ResponseBody
+  String malformed() {
+    return "<h1>testpage</h1>";
   }
 
   @RequestMapping("/db")
